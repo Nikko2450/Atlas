@@ -1,0 +1,31 @@
+.header {
+  padding: 100px 0;
+  background-image: url("../img/header/header-img-1.svg");
+  height: 80vh;
+
+  &__container {
+    padding: 221px 0 320px;
+  }
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 55px;
+    line-height: 82px;
+    color: $c-white;
+  }
+
+  &__desc {
+    font-size: 30px;
+    color: $c-white;
+  }
+
+  &__button {
+    padding: 19px 40px;
+    display: inline;
+    
+  }
+
+
+}
