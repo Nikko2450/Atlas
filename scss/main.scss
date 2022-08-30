@@ -1,0 +1,31 @@
+@import "components/reset";
+@import "components/variables";
+@import "section/header";
+
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 52px;
+    color: $c-gray;
+}
+
+.button {
+    background: $c-blue;
+    border-radius: 10px;
+    color: $c-white;
+    padding: 19px 40px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    font-weight: 700;
+    font-size: 18px;
+}
