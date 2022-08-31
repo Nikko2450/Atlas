@@ -59,7 +59,7 @@ ul, ol {
   color: #303A42;
 }
 
-.button {
+.button, .button-bordered {
   background: #0093FF;
   border-radius: 10px;
   color: #FFFFFF;
@@ -70,16 +70,39 @@ ul, ol {
   font-size: 18px;
 }
 
+.button-bordered {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+}
+
 .header {
   padding: 100px 0;
-  background-image: url("../img/header/header-img-1.svg");
+  background-image: url("../img/header/header-img-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 80vh;
 }
+.header::after {
+  content: "";
+  background: #003861;
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.25s ease;
+}
 .header__container {
-  padding: 221px 0 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .header__text {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .header__title {
   font-size: 55px;
@@ -92,7 +115,14 @@ ul, ol {
 }
 .header__button {
   padding: 19px 40px;
-  display: inline;
+}
+.header__button:first-child {
+  margin-right: 30px;
+}
+.header__buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav {
@@ -120,18 +150,23 @@ ul, ol {
 }
 .nav__link {
   position: relative;
+  transition: color 0.25s ease;
 }
 .nav__link::after {
   content: "";
   background: #0093FF;
   height: 2px;
-  width: 50%;
+  width: 0;
   position: absolute;
   bottom: -8px;
   left: 1px;
+  transition: width 0.25s ease;
 }
 .nav__link:hover {
   color: #0093FF;
+}
+.nav__link:hover::after {
+  width: 50%;
 }
 .nav__button {
   padding: 14px 28px;

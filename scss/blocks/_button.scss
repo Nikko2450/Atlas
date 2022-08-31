@@ -8,3 +8,10 @@
   font-weight: 700;
   font-size: 18px;
 }
+
+.button-bordered {
+  @extend .button;
+  background: transparent;
+  border: 1px solid $c-white;
+
+}
