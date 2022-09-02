@@ -1,7 +1,7 @@
 .about {
-  padding: 120px 0;
 
   &__container {
+    padding: 120px 0;
     height: 100%;
     display: flex;
     align-items: center;
@@ -60,5 +60,6 @@
   &__desc {
     font-size: 20px;
     line-height: 35px;
+    margin-top: 20px;
   }
 }
