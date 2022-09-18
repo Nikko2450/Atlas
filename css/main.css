@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -73,6 +74,41 @@ ul, ol {
 .button-bordered {
   background: transparent;
   border: 1px solid #FFFFFF;
+}
+
+.radiobutton {
+  display: flex;
+  align-items: center;
+}
+.radiobutton:not(:last-of-type) {
+  margin-right: 52px;
+}
+.radiobutton input {
+  display: none;
+}
+.radiobutton input:checked ~ .radiobutton__input::after {
+  opacity: 1;
+}
+.radiobutton__input {
+  margin-right: 10px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 147, 255, 0.5);
+  display: block;
+  border-radius: 50%;
+}
+.radiobutton__input::after {
+  content: "";
+  background: #0093FF;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .header {
@@ -370,4 +406,112 @@ ul, ol {
   color: #303A42;
   font-size: 18px;
   line-height: 30px;
+}
+
+.ebook {
+  padding: 120px 0 45px;
+}
+.ebook__container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.ebook__image {
+  width: 50%;
+}
+
+.form {
+  width: 50%;
+}
+.form__wrap {
+  width: 80%;
+}
+.form__title {
+  margin-bottom: 36px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 52px;
+  color: #303A42;
+}
+.form__name {
+  display: flex;
+}
+.form__name .form__block {
+  width: calc(50% - 20px);
+}
+.form__intro {
+  margin-bottom: 10px;
+  display: block;
+  color: #303A42;
+  font-size: 22px;
+  line-height: 33px;
+}
+.form__block {
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.form__block:not(:last-of-type) {
+  margin-right: 40px;
+}
+.form__input, .form textarea {
+  max-width: 100%;
+  padding: 18px 30px;
+  border-radius: 10px;
+  outline: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  font-size: 19px;
+  line-height: 28px;
+}
+.form__input::-moz-placeholder, .form textarea::-moz-placeholder {
+  color: rgba(48, 58, 66, 0.5);
+  font-size: 19px;
+  line-height: 28px;
+}
+.form__input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {
+  color: rgba(48, 58, 66, 0.5);
+  font-size: 19px;
+  line-height: 28px;
+}
+.form__input::placeholder, .form textarea::placeholder {
+  color: rgba(48, 58, 66, 0.5);
+  font-size: 19px;
+  line-height: 28px;
+}
+.form__radiobuttons {
+  display: flex;
+  margin-bottom: 26px;
+}
+.form textarea {
+  min-height: 184px;
+  width: calc(100% - 60px);
+  resize: none;
+}
+.form__button {
+  border: 0;
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 36px;
+}
+
+.ebook-list {
+  counter-reset: number;
+  -moz-columns: 2;
+       columns: 2;
+  margin-top: 38px;
+}
+.ebook-list__item {
+  width: calc(100% - 25px);
+  padding: 0;
+  list-style: none;
+  counter-increment: number;
+  color: #303A42;
+  font-size: 18px;
+  line-height: 40px;
+}
+.ebook-list__item::marker {
+  content: counter(number) ") ";
 }/*# sourceMappingURL=main.css.map */

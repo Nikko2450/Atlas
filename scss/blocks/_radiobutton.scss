@@ -1,0 +1,47 @@
+.radiobutton {
+  $this: &;
+  display: flex;
+  align-items: center;
+
+  &:not(:last-of-type) {
+    margin-right: 52px;
+  }
+  
+
+  input {
+    display: none;
+
+    &:checked {
+      ~ #{$this}__input {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__input {
+    margin-right: 10px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba($c-blue, 0.5);
+    display: block;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      background: $c-blue;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    } 
+  }
+
+  
+}
