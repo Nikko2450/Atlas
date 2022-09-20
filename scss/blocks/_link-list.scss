@@ -1,0 +1,13 @@
+.link-list {
+  text-transform: capitalize;
+
+  &__item {
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba($c-white, 0.71);
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
