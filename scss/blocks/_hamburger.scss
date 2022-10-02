@@ -1,0 +1,39 @@
+.hamburger {
+  display: none;
+  $this: &;
+
+  &.is-active {
+    #{$this}__line {
+      &:first-child {
+        transform: rotate(45deg) translateY(2px);
+        margin: 0;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg) translateY(-2px);
+        margin: 0;
+      }
+    }
+  }
+
+  @media (max-width: $sm) {
+    display: block;
+  }
+
+  &__line {
+    transition: transform 0.3s ease-in-out;
+    width: 40px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: black;
+    display: block;
+
+    &:not(:last-of-type) {
+      margin-bottom: 7px;
+    }
+  }
+}

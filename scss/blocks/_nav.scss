@@ -19,10 +19,45 @@
     align-items: center;
     color: $c-gray;
 
+    &.is-active {
+      right: 0;
+    }
+
     a {
 
       &:not(:last-of-type) {
         margin-right: 60px;
+      }
+    }
+
+    @media (max-width: $md) {
+      font-size: 16px;
+
+      a {
+
+        &:not(:last-of-type) {
+          margin-right: 30px;
+          
+        }
+      }
+    }
+
+    @media (max-width: $sm) {
+      position: absolute;
+      width: 100%;
+      top: 100px;
+      right: -100%;
+      background-color: white;
+      flex-direction: column;
+      padding: 15px;
+      transition: right 0.3s ease-in-out;
+      
+      a {
+
+        &:not(:last-of-type) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -58,5 +93,9 @@
 
   &__logo {
     height: 60px;
+
+    @media (max-width: $md) {
+      width: 100px;
+    }  
   }
 }

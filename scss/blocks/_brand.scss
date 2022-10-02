@@ -1,5 +1,5 @@
 .brand {
-
+  
   &__title {
     text-align: center;
     font-size: 35px;
@@ -35,5 +35,11 @@
       top: 16px;
       left: 0;
     }
+
+    @media (max-width: $xs) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }  
   }
 }

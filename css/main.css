@@ -111,6 +111,37 @@ ul, ol {
   opacity: 0;
 }
 
+.hamburger {
+  display: none;
+}
+.hamburger.is-active .hamburger__line:first-child {
+  transform: rotate(45deg) translateY(2px);
+  margin: 0;
+}
+.hamburger.is-active .hamburger__line:nth-child(2) {
+  display: none;
+}
+.hamburger.is-active .hamburger__line:last-child {
+  transform: rotate(-45deg) translateY(-2px);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+.hamburger__line {
+  transition: transform 0.3s ease-in-out;
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: black;
+  display: block;
+}
+.hamburger__line:not(:last-of-type) {
+  margin-bottom: 7px;
+}
+
 .header {
   position: relative;
   padding: 100px 0;
@@ -142,18 +173,44 @@ ul, ol {
 }
 .header__title {
   font-size: 55px;
-  line-height: 82px;
+  line-height: 164%;
   color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .header__title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .header__title {
+    font-size: 25px;
+  }
 }
 .header__desc {
   font-size: 30px;
   color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .header__desc {
+    font-size: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .header__desc {
+    font-size: 15px;
+  }
 }
 .header__button {
   padding: 19px 40px;
 }
 .header__button:first-child {
   margin-right: 30px;
+}
+@media (max-width: 576px) {
+  .header__button {
+    padding: 15px 25px;
+    font-size: 15px;
+  }
 }
 .header__buttons {
   margin-top: 50px;
@@ -181,8 +238,35 @@ ul, ol {
   align-items: center;
   color: #303A42;
 }
+.nav__menu.is-active {
+  right: 0;
+}
 .nav__menu a:not(:last-of-type) {
   margin-right: 60px;
+}
+@media (max-width: 1024px) {
+  .nav__menu {
+    font-size: 16px;
+  }
+  .nav__menu a:not(:last-of-type) {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .nav__menu {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    right: -100%;
+    background-color: white;
+    flex-direction: column;
+    padding: 15px;
+    transition: right 0.3s ease-in-out;
+  }
+  .nav__menu a:not(:last-of-type) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
 .nav__link {
   position: relative;
@@ -209,6 +293,11 @@ ul, ol {
 }
 .nav__logo {
   height: 60px;
+}
+@media (max-width: 1024px) {
+  .nav__logo {
+    width: 100px;
+  }
 }
 
 .about {
@@ -301,7 +390,16 @@ ul, ol {
   top: 16px;
   left: 0;
 }
+@media (max-width: 576px) {
+  .brand__images {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
 
+.why {
+  overflow: hidden;
+}
 .why__container {
   display: flex;
   flex-wrap: wrap;
@@ -372,6 +470,11 @@ ul, ol {
   color: #0093FF;
   border-color: #0093FF;
 }
+@media (max-width: 576px) {
+  .why__button {
+    font-size: 12px;
+  }
+}
 
 .skill {
   padding: 30px;
@@ -386,6 +489,20 @@ ul, ol {
 }
 .skill:nth-child(-n+3) {
   margin-bottom: 57px;
+}
+@media (max-width: 1024px) {
+  .skill {
+    width: calc(50% - 12.5px);
+  }
+  .skill:nth-child(2), .skill:nth-child(5) {
+    margin: 0;
+  }
+  .skill:nth-child(-n+4) {
+    margin-bottom: 57px;
+  }
+  .skill:nth-child(even) {
+    margin-left: 25px;
+  }
 }
 .skill__image {
   display: flex;
@@ -419,15 +536,36 @@ ul, ol {
   width: 100%;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .ebook__container {
+    flex-direction: column;
+  }
+}
 .ebook__wrap {
   width: 50%;
+}
+@media (max-width: 1024px) {
+  .ebook__wrap {
+    width: 100%;
+    margin-top: 40px;
+  }
 }
 
 .form {
   width: 50%;
 }
+@media (max-width: 1024px) {
+  .form {
+    width: 100%;
+  }
+}
 .form__wrap {
   width: 80%;
+}
+@media (max-width: 1024px) {
+  .form__wrap {
+    width: 100%;
+  }
 }
 .form__title {
   margin-bottom: 36px;
@@ -506,6 +644,11 @@ ul, ol {
        columns: 2;
   margin-top: 38px;
 }
+@media (max-width: 1024px) {
+  .ebook-list {
+    padding-left: 22px;
+  }
+}
 .ebook-list__item {
   width: calc(100% - 25px);
   padding: 0;
@@ -557,11 +700,27 @@ ul, ol {
 .footer__links {
   width: 30%;
 }
+@media (max-width: 1024px) {
+  .footer__links {
+    width: 50%;
+  }
+}
 .footer__contacts {
   width: 30%;
 }
+@media (max-width: 1024px) {
+  .footer__contacts {
+    width: 50%;
+  }
+}
 .footer__text {
   width: 40%;
+}
+@media (max-width: 1024px) {
+  .footer__text {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 .footer__desc {
   font-size: 20px;

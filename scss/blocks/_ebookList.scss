@@ -3,6 +3,10 @@
   columns: 2;
   margin-top: 38px;
 
+  @media (max-width: $md) {
+    padding-left: 22px;
+  }
+
   &__item {
     width: calc(100% - 25px);
     padding: 0;

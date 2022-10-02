@@ -1,16 +1,23 @@
 .ebook {
   padding: 120px 0 45px;
 
-  
-
   &__container {
     display: flex;
     width : 100%;
     align-items: center;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
   }
 
   &__wrap {
     width: 50%;
+
+    @media (max-width: $md) {
+      width: 100%;
+      margin-top: 40px;
+    }
   }
 
 }

@@ -40,14 +40,31 @@
 
   &__links {
     width: 30%;
+
+    @media (max-width: $md) {
+      width: 50%;
+    }
+
+    @media (max-width: $xs) {
+    }
+  
   }
 
   &__contacts {
     width: 30%;
+
+    @media (max-width: $md) {
+      width: 50%;
+    }
   }
 
   &__text {
     width: 40%;
+
+    @media (max-width: $md) {
+      width: 100%;
+      margin-top: 30px;
+    }
   }
 
   &__desc {
