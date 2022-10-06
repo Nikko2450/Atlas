@@ -36,10 +36,18 @@
       left: 0;
     }
 
+    img {
+
+      @media (max-width: $xs) {
+        margin-bottom: 10px;
+      }  
+    }
+
     @media (max-width: $xs) {
       flex-wrap: wrap;
+      display: flex;
       justify-content: space-around;
-      
+      flex-direction: column; 
     }  
   }
 }
